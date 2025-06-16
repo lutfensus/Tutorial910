@@ -5,7 +5,7 @@ class RefrigeratedContainer extends Container {
     public RefrigeratedContainer(double height, double tareWeight, double depth, double maxPayload,
                                  Product product, double temperature) throws IllegalArgumentException {
         super(height, tareWeight, depth, maxPayload, "C");
-        if (temperature > product.getRequiredTemp()) {
+        if (temperature < product.getRequiredTemp()) {
             throw new IllegalArgumentException("Temperature too high for " + product.getName());
         }
         this.product = product;
